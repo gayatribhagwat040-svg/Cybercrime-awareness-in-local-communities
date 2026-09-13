@@ -1,0 +1,1376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Safety</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #03091c;
+    color: white;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 6%;
+
+    background: rgba(3, 9, 28, 0.85);
+
+    border-bottom: 1px solid #164e83;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 38px;
+}
+
+.logo h2 {
+    font-size: 22px;
+}
+
+.logo h2 span {
+    color: #00d9ff;
+}
+
+.logo p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #b7c8e8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00d9ff;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO BACKGROUND IMAGE
+========================= */
+
+.hero {
+
+    min-height: 720px;
+
+    padding: 170px 7% 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    /*
+       YOUR BACKGROUND IMAGE
+    */
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 9, 28, 0.98) 0%,
+            rgba(3, 9, 28, 0.88) 40%,
+            rgba(3, 9, 28, 0.35) 100%
+        ),
+
+        url("background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid #087aa5;
+
+    border-radius: 30px;
+
+    background: rgba(0, 217, 255, 0.08);
+
+    color: #00d9ff;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00d9ff;
+}
+
+.hero h3 {
+    font-size: 25px;
+
+    font-weight: normal;
+
+    color: #e3ecff;
+
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #b8c8e5;
+
+    font-size: 16px;
+
+    max-width: 540px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #00d9ff,
+        #1683ff
+    );
+
+    color: #001021;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 0 25px #00d9ff;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+}
+
+.feature {
+    border-right: 1px solid #245078;
+
+    padding-right: 25px;
+
+    min-width: 150px;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature h4 {
+    color: #00d9ff;
+
+    margin-bottom: 4px;
+}
+
+.feature p {
+    font-size: 13px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 70px 7%;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+.section-title {
+    font-size: 35px;
+
+    color: #00d9ff;
+
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: #aebedc;
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(
+        145deg,
+        #0c1b42,
+        #07112c
+    );
+
+    border: 1px solid #174f85;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00d9ff;
+
+    box-shadow: 0 0 25px rgba(
+        0, 217, 255, 0.15
+    );
+}
+
+.card-icon {
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aebedc;
+
+    font-size: 14px;
+}
+
+.card a {
+    color: #00d9ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+/* =========================
+   WARNING
+========================= */
+
+.warning {
+    background: linear-gradient(
+        135deg,
+        #35152c,
+        #1d1230
+    );
+
+    border-left: 5px solid #ff4d91;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+}
+
+.warning h3 {
+    color: #ff80b2;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community-list {
+    list-style: none;
+}
+
+.community-list li {
+    background: #0c1b42;
+
+    border: 1px solid #174f85;
+
+    padding: 16px 20px;
+
+    margin: 12px 0;
+
+    border-radius: 10px;
+
+    color: #d7e5ff;
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-box {
+    background: #07132f;
+
+    border: 1px solid #174f85;
+
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+.question {
+    background: #0d1d43;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    margin: 20px 0;
+}
+
+.question h3 {
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+.question label {
+    display: block;
+
+    padding: 10px;
+
+    color: #c7d5ee;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+.question label:hover {
+    background: #172d5b;
+}
+
+input[type="radio"] {
+    accent-color: #00d9ff;
+
+    margin-right: 10px;
+}
+
+#result {
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    color: #00d9ff;
+
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #020617;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    border-top: 1px solid #174f85;
+}
+
+footer h2 {
+    color: #00d9ff;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #aebedc;
+
+    margin: 8px 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 150px 5% 60px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        padding-top: 20px;
+
+        gap: 15px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .hero {
+        min-height: 700px;
+
+        padding: 150px 20px 50px;
+
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h3 {
+        font-size: 20px;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature {
+        border-right: none;
+
+        border-bottom: 1px solid #245078;
+
+        padding-bottom: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-icon">🛡️</div>
+
+        <div>
+
+            <h2>
+                Cyber Safety
+            </h2>
+
+            <p>
+                LEARN | STAY SAFE | STAY AHEAD
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+    <div
+        class="nav-links"
+        id="navLinks">
+
+        <a href="#home">Home</a>
+
+        <a href="#crimes">Cyber Crimes</a>
+
+        <a href="#safety">Safety Tips</a>
+
+        <a href="#resources">Resources</a>
+
+        <a href="#quiz">Quiz</a>
+
+        <a href="#community">Community</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+
+            ⚠️ Awareness • Education • Safer Tomorrow
+
+        </div>
+
+        <h1>
+
+            Cyber Safety<br>
+
+        </h1>
+
+        <h3>
+
+            Protecting Our Community<br>
+
+            from Cyber Threats
+
+        </h3>
+
+        <p>
+
+            Learn about online scams, stay informed,
+            and keep yourself and your loved ones
+            safe in the digital world.
+
+        </p>
+
+        <a
+            href="#crimes"
+            class="btn">
+
+            Explore & Learn →
+
+        </a>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <h4>🛡️ Be Aware</h4>
+
+                <p>Spot the Risks</p>
+
+            </div>
+
+            <div class="feature">
+
+                <h4>🔐 Be Careful</h4>
+
+                <p>Protect Your Data</p>
+
+            </div>
+
+            <div class="feature">
+
+                <h4>🤝 Be Safe</h4>
+
+                <p>Help Your Community</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     CYBER CRIMES
+========================= -->
+
+<section id="crimes">
+
+    <h2 class="section-title">
+
+        ⚠️ Common Cyber Crimes
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Understand common online threats and how scammers target people.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🎣</div>
+
+            <h3>Phishing</h3>
+
+            <p>
+                Fake emails, messages or websites
+                designed to steal your personal information.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">📱</div>
+
+            <h3>OTP Fraud</h3>
+
+            <p>
+                Never share your OTP, PIN or banking
+                password with anyone.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">💸</div>
+
+            <h3>UPI Fraud</h3>
+
+            <p>
+                Fraudsters may trick you into
+                approving a payment or sharing sensitive details.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">👤</div>
+
+            <h3>Digital Arrest Scam</h3>
+
+            <p>
+                Criminals pretend to be police or officials
+                and demand money through calls.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="warning">
+
+        <h3>
+            🚨 Important: Digital Arrest Scam Warning
+        </h3>
+
+        <p>
+            Police or government officials do not conduct
+            arrests through video calls or demand money
+            to cancel an arrest. If someone threatens you
+            with a digital arrest, do not share money,
+            OTPs or personal details. Report suspicious
+            financial cyber fraud immediately by calling
+            1930.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SAFETY TIPS
+========================= -->
+
+<section id="safety">
+
+    <h2 class="section-title">
+
+        🔐 Stay Safe Online
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Follow these simple habits to protect yourself.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🔑</div>
+
+            <h3>Strong Passwords</h3>
+
+            <p>
+                Use unique passwords and enable
+                two-factor authentication.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">📵</div>
+
+            <h3>Never Share OTP</h3>
+
+            <p>
+                Banks and genuine services will
+                never need your OTP over a call.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">🔗</div>
+
+            <h3>Check Links</h3>
+
+            <p>
+                Avoid clicking suspicious links
+                received through messages.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">📲</div>
+
+            <h3>Update Devices</h3>
+
+            <p>
+                Keep your phone, laptop and
+                applications updated.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     RESOURCES
+========================= -->
+
+<section id="resources">
+
+    <h2 class="section-title">
+
+        🌐 Quick Access
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Useful links and helplines for your safety.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🌐</div>
+
+            <h3>National Cyber Crime Portal</h3>
+
+            <p>
+                File complaints online and access
+                cyber safety information.
+            </p>
+
+            <br>
+
+            <a
+                href="https://cybercrime.gov.in"
+                target="_blank">
+
+                cybercrime.gov.in →
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">📞</div>
+
+            <h3>Cyber Crime Helpline</h3>
+
+            <h2 style="color:#00d9ff;">
+
+                1930
+
+            </h2>
+
+            <p>
+                National helpline for reporting
+                financial cyber fraud.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">👮</div>
+
+            <h3>Police Station</h3>
+
+            <p>
+                Visit your nearest police station
+                to report a cyber crime.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.google.com/maps/search/police+station"
+                target="_blank">
+
+                Find Police Station →
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-icon">👩‍👧</div>
+
+            <h3>Women & Child Helpline</h3>
+
+            <h2 style="color:#00d9ff;">
+
+                181
+
+            </h2>
+
+            <p>
+                Women Helpline for support
+                and assistance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
+<section id="community">
+
+    <h2 class="section-title">
+
+        🤝 Community Awareness
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Together we can build a safer digital community.
+
+    </p>
+
+    <ul class="community-list">
+
+        <li>
+            🏫 Organize cyber safety workshops in schools and colleges.
+        </li>
+
+        <li>
+            📢 Create awareness posters in Marathi and English.
+        </li>
+
+        <li>
+            👥 Conduct community meetings about cybercrime.
+        </li>
+
+        <li>
+            👮 Partner with local police for awareness drives.
+        </li>
+
+        <li>
+            📱 Share cyber safety tips in regional languages.
+        </li>
+
+    </ul>
+
+</section>
+
+<!-- =========================
+     QUIZ
+========================= -->
+
+<section id="quiz">
+
+    <h2 class="section-title">
+
+        🧠 Test Your Cyber Safety Knowledge
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Answer these 5 questions and check your score!
+
+    </p>
+
+    <div class="quiz-box">
+
+        <form id="quizForm">
+
+            <div class="question">
+
+                <h3>
+                    1. Someone asks for your bank OTP.
+                    What should you do?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q1" value="0">
+                    Share the OTP if they sound genuine
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="1">
+                    Never share OTP; contact your bank
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="0">
+                    Ask them to send it in writing
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>
+                    2. Which is a sign of phishing?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q2" value="1">
+                    Urgent language and suspicious sender address
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="0">
+                    Professional formatting only
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="0">
+                    A known contact
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>
+                    3. What should you do after a cyber fraud?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q3" value="0">
+                    Wait for money to return
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="1">
+                    Contact bank and report immediately
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="0">
+                    Delete all messages
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>
+                    4. Is digital arrest a real police procedure?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q4" value="0">
+                    Yes, police can arrest you online
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="1">
+                    No, it is a scam
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="0">
+                    Only for serious crimes
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <h3>
+                    5. What is India's cyber crime helpline?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q5" value="0">
+                    100
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="0">
+                    108
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="1">
+                    1930
+                </label>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn">
+
+                Submit Answers 🚀
+
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+
+        📩 Contact & Awareness
+
+    </h2>
+
+    <p class="section-subtitle">
+
+        Stay informed. Share cyber safety awareness with your family and friends.
+
+    </p>
+
+    <div class="warning">
+
+        <h3>
+            🚨 If you are a victim of cyber fraud
+        </h3>
+
+        <p>
+            Contact your bank immediately, call 1930
+            for financial cyber fraud, and report the
+            incident through the National Cyber Crime Portal.
+        </p>
+
+        <a
+            href="https://cybercrime.gov.in"
+            target="_blank"
+            class="btn">
+
+            Report Cyber Crime →
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        🛡️ Cyber Safety
+    </h2>
+
+    <p>
+        Protecting Our Community from Cyber Threats
+    </p>
+
+    <p>
+        Emergency: 1930 | Women's Helpline: 181
+    </p>
+
+    <p>
+        Stay Safe, Stay Aware! 💙
+    </p>
+
+    <p>
+        Created for Community Awareness |
+        Mumbai, India
+    </p>
+
+</footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function toggleMenu() {
+
+    document.getElementById("navLinks")
+    .classList.toggle("show");
+
+}
+
+/* Close menu after clicking */
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks")
+        .classList.remove("show");
+
+    });
+
+});
+
+/* QUIZ SCORE */
+
+document.getElementById("quizForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let score = 0;
+
+    let questions = [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+    ];
+
+    let allAnswered = true;
+
+    questions.forEach(function(question) {
+
+        let answer = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (answer) {
+
+            score += Number(answer.value);
+
+        } else {
+
+            allAnswered = false;
+
+        }
+
+    });
+
+    let result = document.getElementById("result");
+
+    if (!allAnswered) {
+
+        result.innerHTML =
+            "⚠️ Please answer all 5 questions!";
+
+        return;
+
+    }
+
+    result.innerHTML =
+        "🎉 Your Score: " + score + " / 5<br>" +
+
+        (score === 5
+
+            ? "Excellent! You are cyber smart! 🛡️"
+
+            : "Keep learning and stay cyber safe! 💙");
+
+    result.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
